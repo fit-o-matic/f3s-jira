@@ -16,7 +16,7 @@ func main() {
 	client := f3sjira.NewJiraClient(config)
 
 	client.Connect()
-	client.Search("project = \"Apache Blur\" order by key asc", printIssue)
+	client.Search("project = \"Apache Blur\" order by key asc", f3sjira.NewDefaultSearchOptions(), printIssue)
 }
 
 func printIssue(issue jira.Issue) error {
